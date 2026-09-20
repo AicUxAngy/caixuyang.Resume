@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>蔡旭阳 · 个人简历 | 慎思 · 笃行 · 博学 · 致新</title>
+<style>
+  :root{
+    --primary:#0f4c5c;
+    --accent:#2a9d8f;
+    --accent-soft:#e6f4f2;
+    --dark:#16323c;
+    --text:#2b3a42;
+    --muted:#6b7d85;
+    --line:#e3eaed;
+    --bg:#eef2f3;
+    --c-boxue:#0f4c5c;
+    --c-shensi:#2a9d8f;
+    --c-duxing:#e76f51;
+    --c-zhixin:#457b9d;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+    color:var(--text);line-height:1.7;background:var(--bg);
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{max-width:1120px;margin:36px auto;background:#fff;
+    box-shadow:0 8px 40px rgba(15,60,75,.12);border-radius:16px;overflow:hidden;}
+  .hero{background:linear-gradient(120deg,#0b3a46,#2a9d8f);color:#fff;padding:46px 52px;}
+  .hero .top{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:18px;}
+  .hero h1{font-size:2.5rem;letter-spacing:3px;font-weight:700;}
+  .hero .job{font-size:1.12rem;margin-top:8px;font-weight:300;opacity:.95;}
+  .hero .motto{font-size:1.05rem;letter-spacing:6px;opacity:.92;text-align:right;line-height:1.9;font-weight:300;}
+  .hero .motto b{font-weight:700;}
+  .hero .meta{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px 24px;font-size:.9rem;opacity:.96;
+    border-top:1px solid rgba(255,255,255,.2);padding-top:16px;}
+  .hero .meta span{display:inline-flex;align-items:center;gap:6px;}
+  .dot{width:6px;height:6px;background:#fff;border-radius:50%;display:inline-block;opacity:.7;}
+  .nav{display:grid;grid-template-columns:repeat(4,1fr);background:#f6f9fa;border-bottom:1px solid var(--line);}
+  .nav .cell{padding:18px 10px;text-align:center;border-right:1px solid var(--line);}
+  .nav .cell:last-child{border-right:none;}
+  .nav .cn{font-size:1.35rem;font-weight:700;letter-spacing:4px;}
+  .nav .py{font-size:.72rem;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-top:2px;}
+  .nav .cell:nth-child(1) .cn{color:var(--c-boxue);}
+  .nav .cell:nth-child(2) .cn{color:var(--c-shensi);}
+  .nav .cell:nth-child(3) .cn{color:var(--c-duxing);}
+  .nav .cell:nth-child(4) .cn{color:var(--c-zhixin);}
+  .body{padding:44px 52px;}
+  .sec{margin-bottom:46px;}
+  .sec:last-child{margin-bottom:0;}
+  .sec-head{display:flex;align-items:center;gap:16px;margin-bottom:22px;flex-wrap:wrap;}
+  .sec-mark{font-size:2.3rem;font-weight:800;letter-spacing:4px;line-height:1;}
+  .sec-line{flex:1;min-width:40px;height:2px;background:var(--line);}
+  .sec-sub{font-size:.86rem;color:var(--muted);max-width:600px;}
+  .sec-sub b{color:var(--text);font-weight:600;}
+  .sec[data-c=boxue] .sec-mark{color:var(--c-boxue);}
+  .sec[data-c=shensi] .sec-mark{color:var(--c-shensi);}
+  .sec[data-c=duxing] .sec-mark{color:var(--c-duxing);}
+  .sec[data-c=zhixin] .sec-mark{color:var(--c-zhixin);}
+  .item{padding:14px 0 14px 20px;border-left:2px solid var(--line);position:relative;}
+  .item::before{content:"";position:absolute;left:-7px;top:20px;width:12px;height:12px;border-radius:50%;
+    background:#fff;border:3px solid var(--accent);}
+  .sec[data-c=duxing] .item::before{border-color:var(--c-duxing);}
+  .sec[data-c=shensi] .item::before{border-color:var(--c-shensi);}
+  .sec[data-c=zhixin] .item::before{border-color:var(--c-zhixin);}
+  .item .row{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px;}
+  .item .t{font-weight:700;color:var(--dark);font-size:1.02rem;}
+  .item .date{font-size:.82rem;color:var(--muted);white-space:nowrap;}
+  .item .role{color:var(--accent);font-size:.86rem;font-weight:600;margin:3px 0 8px;}
+  .item ul{list-style:none;}
+  .item li{position:relative;padding-left:16px;margin-bottom:6px;font-size:.9rem;color:#43565f;}
+  .item li::before{content:"";position:absolute;left:0;top:9px;width:5px;height:5px;border-radius:50%;background:var(--accent);}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:30px;}
+  .edu-item{margin-bottom:16px;padding-left:16px;border-left:3px solid var(--c-boxue);}
+  .edu-item .h{font-weight:700;color:var(--dark);}
+  .edu-item .d{color:var(--c-boxue);font-size:.82rem;font-weight:600;margin:2px 0;}
+  .edu-item .s{color:var(--muted);font-size:.85rem;}
+  .tag-list{display:flex;flex-wrap:wrap;gap:9px;margin-top:4px;}
+  .tag{background:var(--accent-soft);color:var(--primary);padding:6px 14px;border-radius:20px;font-size:.85rem;font-weight:500;}
+  .pub{font-size:.9rem;margin-bottom:12px;padding-left:18px;position:relative;color:#43565f;}
+  .pub::before{content:"\25B8";position:absolute;left:0;color:var(--c-zhixin);font-weight:700;}
+  .pub b{color:var(--dark);}
+  .badge{display:inline-block;background:var(--c-zhixin);color:#fff;font-size:.72rem;padding:1px 8px;border-radius:10px;margin-left:6px;}
+  .mini-title{font-weight:700;color:var(--dark);font-size:1rem;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+  .mini-title::before{content:"";width:4px;height:16px;background:var(--c-boxue);border-radius:2px;}
+  .foot{background:var(--dark);color:#c7d6da;text-align:center;font-size:.78rem;padding:16px;letter-spacing:.5px;}
+  @media(max-width:860px){
+    .two{grid-template-columns:1fr;}
+    .body,.hero{padding-left:24px;padding-right:24px;}
+    .nav{grid-template-columns:repeat(2,1fr);}
+    .nav .cell:nth-child(2){border-right:none;}
+    .page{margin:0;border-radius:0;}
+    .hero .motto{text-align:left;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="hero">
+    <div class="top">
+      <div>
+        <h1>蔡旭阳</h1>
+        <div class="job">求职意向：空间规划 / 地信类相关技术岗</div>
+      </div>
+      <div class="motto"><b>慎思 · 笃行</b><br>博学 · 致新</div>
+    </div>
+    <div class="meta">
+      <span><i class="dot"></i>2001.10</span>
+      <span><i class="dot"></i>共青团员</span>
+      <span><i class="dot"></i>15708665706</span>
+      <span><i class="dot"></i>caixuy1004@163.com</span>
+      <span><i class="dot"></i>贵州师范大学 · 应届硕士</span>
+    </div>
+  </header>
+
+  <div class="nav">
+    <div class="cell"><div class="cn">博学</div><div class="py">Erudition</div></div>
+    <div class="cell"><div class="cn">慎思</div><div class="py">Reflection</div></div>
+    <div class="cell"><div class="cn">笃行</div><div class="py">Practice</div></div>
+    <div class="cell"><div class="cn">致新</div><div class="py">Innovation</div></div>
+  </div>
+
+  <div class="body">
+
+    <section class="sec" data-c="boxue">
+      <div class="sec-head">
+        <div class="sec-mark">博学</div>
+        <div class="sec-line"></div>
+        <div class="sec-sub"><b>厚积学识，广纳技能。</b>GIS 与遥感方向本硕贯通培养，构建起扎实的空间信息技术体系。</div>
+      </div>
+      <div class="two">
+        <div>
+          <div class="mini-title">教育背景</div>
+          <div class="edu-item">
+            <div class="h">地图学与地理信息系统 · 硕士</div>
+            <div class="d">2024.09 ~ 2027.07</div>
+            <div class="s">贵州师范大学 ｜ 职务：班长 ｜ 研究方向：GIS 与遥感水文过程</div>
+          </div>
+          <div class="edu-item">
+            <div class="h">地理信息科学 · 本科</div>
+            <div class="d">2020.09 ~ 2024.07</div>
+            <div class="s">贵州师范大学 ｜ 职务：班长 ｜ 主修：C#语言、数据库、遥感技术、GPS、GIS 设计与开发</div>
+          </div>
+        </div>
+        <div>
+          <div class="mini-title">专业技能</div>
+          <div class="tag-list">
+            <span class="tag">Python 数据处理</span>
+            <span class="tag">Google Earth Engine</span>
+            <span class="tag">ArcGIS</span>
+            <span class="tag">ENVI</span>
+            <span class="tag">ERDAS</span>
+            <span class="tag">CAD</span>
+            <span class="tag">空间大数据分析</span>
+            <span class="tag">英文文献读写</span>
+            <span class="tag">C1 驾驶证</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" data-c="shensi">
+      <div class="sec-head">
+        <div class="sec-mark">慎思</div>
+        <div class="sec-line"></div>
+        <div class="sec-sub"><b>研几究理，深思笃研。</b>纵向课题锤炼严谨的研究逻辑，从基金设计到建模分析全程思辨推演。</div>
+      </div>
+      <div class="item">
+        <div class="row"><span class="t">贵州省基础研究计划重点项目 · 喀斯特水文过程变异对生态系统服务影响机制研究</span><span class="date">2025.12 ~ 2027.06</span></div>
+        <div class="role">核心成员（纵向课题）</div>
+        <ul>
+          <li>基金申报与方案设计：参与申请书撰写，把握研究背景、逻辑框架与预算编制，助力课题成功获批立项。</li>
+          <li>机理思辨与空间分析：深入剖析 GPP、ET 等空间栅格数据，为长时序生态系统水分利用效率研究构建分析逻辑。</li>
+        </ul>
+      </div>
+      <div class="item">
+        <div class="row"><span class="t">贵州省科技计划重点项目 · 地质灾害早期精准识别与智能预警关键技术研究</span><span class="date">2026.01 ~ 2026.08</span></div>
+        <div class="role">子课题参与人（纵向课题）</div>
+        <ul>
+          <li>灾害数据建模与推演：负责地质灾害点空间数据收集、清洗与处理，结合多尺度智能识别方法协助构建风险评估模型。</li>
+          <li>前沿文献梳理：系统整理地质灾害前沿文献，批判性提炼关键技术指标与评估因子。</li>
+        </ul>
+      </div>
+      <div class="item">
+        <div class="row"><span class="t">治学理念与研究方法</span><span class="date">研究内核</span></div>
+        <div class="role">自我思辨</div>
+        <ul>
+          <li>兼具学术研究的严谨逻辑与工程落地的务实思维，擅长在多任务并行中进行系统性思辨与优先级推演。</li>
+          <li>习惯从研究问题出发构建分析框架，重视数据质量审查与技术标准的严谨把控。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="sec" data-c="duxing">
+      <div class="sec-head">
+        <div class="sec-mark">笃行</div>
+        <div class="sec-line"></div>
+        <div class="sec-sub"><b>躬身实践，行胜于言。</b>多个百县级大型工程与政务实习历练出扎实的项目统筹、质控与交付能力。</div>
+      </div>
+      <div class="item">
+        <div class="row"><span class="t">2026 珠江流域片国家级重点防治区外业调查项目</span><span class="date">2026.05 ~ 2026.09</span></div>
+        <div class="role">质量控制负责人 / 核心成员（横向）</div>
+        <ul>
+          <li>规模化项目质控：负责 113 个县解译成果及 10 个县外业数据质量把控与审查，撰写质量控制报告，验收通过率达 90% 以上。</li>
+          <li>技术监督与团队赋能：实施专项技术培训与质量交底（累计培训研究生 13 人、本科生 8 人），建立数据质控闭环。</li>
+        </ul>
+      </div>
+      <div class="item">
+        <div class="row"><span class="t">2025 珠江流域片国家级重点防治区外业调查项目</span><span class="date">2025.05 ~ 2025.09</span></div>
+        <div class="role">执行负责人 / 技术负责人（横向）</div>
+        <ul>
+          <li>统筹执行与技术规划：主导技术方案撰写与实施，负责调研路线与人员调配，推进 93 个县解译及 20 个县外业调查。</li>
+          <li>团队管理与标准化交付：负责团队技术培训（研究生 12 人、本科生 3 人），独立完成结项报告并高质量交付。</li>
+        </ul>
+      </div>
+      <div class="item">
+        <div class="row"><span class="t">贵阳市农业面源污染监测评估项目</span><span class="date">2024.10 ~ 2026.07</span></div>
+        <div class="role">参与人（横向）</div>
+        <ul>
+          <li>遥感反演与数据挖掘：完成植被覆盖度空间遥感提取，对多源监测数据系统汇总与深度分析。</li>
+          <li>报告撰写与验收推进：负责高质量结项报告撰写，保障项目顺利通过最终验收。</li>
+        </ul>
+      </div>
+      <div class="item">
+        <div class="row"><span class="t">贵州省级监测区土壤侵蚀地块地类更新变化解译及水保工程措施补充解译</span><span class="date">2024.05 ~ 2024.09</span></div>
+        <div class="role">执行负责人 / 技术负责人（横向）</div>
+        <ul>
+          <li>全流程执行管理：牵头技术方案撰写与落地，推进完成 72 个县地类更新与解译。</li>
+          <li>数据质控与报告撰写：组织技术培训（研究生 11 人、本科生 16 人），主导成果汇总分析并交付结项报告。</li>
+        </ul>
+      </div>
+      <div class="item">
+        <div class="row"><span class="t">贵州省黔东南州黎平县中潮镇村庄规划</span><span class="date">2024.04 ~ 2026.06</span></div>
+        <div class="role">团队技术骨干 / 村级规划负责人（横向）</div>
+        <ul>
+          <li>基层驻村与调研统筹：深入中潮镇、德顺乡共 17 个村落开展基础数据收集与入户调研。</li>
+          <li>规划编制与核心交付：独立负责兴隆村、尹所村"一图一表"方案编制；深度参与乡镇总规文本撰写及配套数据库建设。</li>
+        </ul>
+      </div>
+      <div class="item">
+        <div class="row"><span class="t">三段政务与企业实习（国源科技 / 天行明德 / 沿河县自然资源局）</span><span class="date">2022.01 ~ 2024.01</span></div>
+        <div class="role">国土空间规划与数据采集实习</div>
+        <ul>
+          <li>北京世纪国源科技贵州分公司：负责国土调查云平台市级与省级空间数据审核，累计精准审核图斑超 3 万个。</li>
+          <li>贵州天行明德咨询：实地参与灌木林地变更调查，完成复杂地形下空间地理信息采集与建库入库。</li>
+          <li>沿河土家族自治县自然资源局：推进规划文件数字化归档与基础空间数据处理，统筹所内常规工作。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="sec" data-c="zhixin">
+      <div class="sec-head">
+        <div class="sec-mark">致新</div>
+        <div class="sec-line"></div>
+        <div class="sec-sub"><b>守正创新，臻于至新。</b>以技术创新驱动研究突破，将空间信息技术转化为论文成果与前沿方法。</div>
+      </div>
+      <div class="mini-title">学术成果</div>
+      <div class="pub"><b>喀斯特北盘江流域不同生态恢复路径 WUE 时空演变及影响因素</b><br>中文卓越领军期刊 / 北大核心 / EI<span class="badge">第 1 作者</span> 修改后终审</div>
+      <div class="pub"><b>Contrasting contributions of vertical water transport processes to WUE variability in the karst critical zone</b><br>SCI 二区<span class="badge">参与作者</span> 修改后终审</div>
+      <div class="mini-title" style="margin-top:22px">技术创新点</div>
+      <div class="item">
+        <div class="row"><span class="t">多尺度智能识别与风险评估建模</span><span class="date">地质灾害方向</span></div>
+        <ul>
+          <li>将多尺度智能识别方法引入地质灾害早期识别，协助构建风险评估模型，探索灾害精准预警的技术路径。</li>
+        </ul>
+      </div>
+      <div class="item">
+        <div class="row"><span class="t">遥感反演与 GEE 云平台空间大数据分析</span><span class="date">水文生态方向</span></div>
+        <ul>
+          <li>基于 Python 与 Google Earth Engine，独立编写数据处理脚本，实现植被覆盖度与长时序 WUE 的空间遥感提取与反演创新。</li>
+        </ul>
+      </div>
+    </section>
+
+  </div>
+
+  <div class="foot">蔡旭阳 · 空间规划 / 地信类技术岗 ｜ 慎思 · 笃行 · 博学 · 致新 ｜ 代表作品（结项报告、规划文本、申报书）详版内容可于面试环节提供核验。</div>
+</div>
+</body>
+</html>
